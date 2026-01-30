@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login | DocVault</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="login-layout">
+
+ <header class="navbar">
+    <div class="logo"><a href="/">DocVault</a> </div>
+    <nav>
+      <a href="upload.html">Upload Doc</a>
+      <a href="">Security</a>
+      <!-- <a href="#">Pricing</a> -->
+      <a href="login.html" class="login-btn">Login</a>
+    </nav>
+  </header>
+
+
+
+    <div class="both-container">
+
+
+
+        <!-- LEFT PANEL -->
+        <div class="login-left">
+            <div class="login-brand">
+                <h1>DocVault</h1>
+                <p>Your Secure Digital Fortress.</p>
+            </div>
+
+            <div class="login-illustration">
+                <div class="shield"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="login-right">
+            <div class="login-card">
+                <h2>SinUp</h2>
+                <p class="sub">Sign in to DocVault</p>
+
+           <form action="backend/auth.php" method="POST">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="password" name="password" placeholder="Password" required>
+
+  <button type="submit" class="btn primary full">
+    Sign Up
+  </button>
+</form>
+
+                <div class="divider">or continue with</div>
+
+                <div class="social-login">
+                    <!-- <button class="social google">Google</button> -->
+                    <!-- <button class="social apple">Apple</button> -->
+                </div>
+
+                <p class="signup">
+                    Old user? <a href="login.html">Login Account</a>
+                </p>
+
+                <div class="secure-badge">
+                    🔒 Secure Authentication
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h3>DocVault</h3>
+                <p>Secure document management for modern teams.</p>
+            </div>
+
+            <div>
+                <h4>Product</h4>
+                <ul>
+                    <li>Features</li>
+                    <li>Security</li>
+                    <li>Pricing</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li>About</li>
+                    <li>Careers</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Resources</h4>
+                <ul>
+                    <li>Help Center</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Powerd By BlumartGlobal LLP. All rights reserved.
+        </div>
+    </footer>
+
+
+
+
+
+
+
+</body>
+
+</html>

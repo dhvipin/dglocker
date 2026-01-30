@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo"><a href="index.html">DocVault</a> </div>
+    <nav>
+      <a href="upload.html">Upload Doc</a>
+    
+      <!-- <a href="#">Pricing</a> -->
+      <a href="login.html" class="login-btn">SinUp/Login</a>
+        <!-- <a href="">User</a> -->
+    </nav>
+  </header>
+
+
+<div class="upload-card">
+  <h2>Upload Document</h2>
+
+  <!-- ✅ PHP FORM (INVISIBLE CHANGE) -->
+  <form action="upload.php" method="POST" enctype="multipart/form-data">
+
+    <div class="upload-grid">
+      <div class="drop-zone">
+        <input type="file" id="fileInput" name="documents[]" multiple
+          accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.jpg,.jpeg,.png,.zip,.rar">
+
+        <div class="drop-inner">
+          <div class="cloud">☁️</div>
+          <h3>Drag & drop files here</h3>
+          <p><span>or browse files</span></p>
+
+          <div class="supported">
+            Supported:
+            <span>PDF</span>
+            <span>JPG</span>
+            <span>PNG</span>
+            <span>DOC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-panel">
+        <label>Category</label>
+        <select name="category">
+          <option>ID</option>
+          <option>Education</option>
+          <option>Finance</option>
+          <option>Medical</option>
+        </select>
+
+        <label>Tags</label>
+        <input type="text" name="tags" placeholder="Add tags...">
+
+        <div class="toggle-row">
+          <span>Auto-categorize</span>
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <small>AI smart document detection</small>
+      </div>
+    </div>
+
+    <div class="file-list" id="fileList"></div>
+
+    <div class="actions">
+      <button type="reset" class="btn-outline">Cancel</button>
+      <button type="submit" class="btn-primary">Upload</button>
+    </div>
+
+  </form>
+</div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h3>DocVault</h3>
+        <p>Secure document management for modern teams.</p>
+      </div>
+
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li>Features</li>
+          <li>Security</li>
+          <li>Pricing</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>About</li>
+          <li>Careers</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li>Help Center</li>
+          <li>Privacy Policy</li>
+          <li>Terms</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Powerd By BlumartGlobal LLP. All rights reserved.
+    </div>
+  </footer>
+
+
+
+<script>
+const dropZone = document.querySelector(".drop-zone");
+const fileInput = document.getElementById("fileInput");
+const fileList = document.getElementById("fileList");
+
+dropZone.addEventListener("dragover", e => {
+  e.preventDefault();
+  dropZone.classList.add("dragging");
+});
+
+dropZone.addEventListener("dragleave", () => {
+  dropZone.classList.remove("dragging");
+});
+
+dropZone.addEventListener("drop", e => {
+  e.preventDefault();
+  dropZone.classList.remove("dragging");
+  fileInput.files = e.dataTransfer.files;
+  fileInput.dispatchEvent(new Event("change"));
+});
+
+fileInput.addEventListener("change", () => {
+  fileList.innerHTML = "";
+  Array.from(fileInput.files).forEach(file => {
+    fileList.innerHTML += `
+      <div class="file">
+        <div class="file-top">
+          <span>${file.name}</span>
+          <span>Ready</span>
+        </div>
+        <div class="progress"><div style="width:100%"></div></div>
+      </div>`;
+  });
+});
+</script>
+
+</body>
+</html>

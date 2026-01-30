@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo"><a href="index.html">DocVault</a> </div>
+    <nav>
+      <a href="upload.html">Upload Doc</a>
+    
+      <!-- <a href="#">Pricing</a> -->
+      <a href="login.html" class="login-btn">SinUp/Login</a>
+        <!-- <a href="">User</a> -->
+    </nav>
+  
+  </header>
+
+
+<div class="sidebar">
+  <a href="dashboard.html">Dashboard</a>
+  <a href="upload.html">Upload</a>
+  <a href="logout.html">Logout</a>
+</div>
+
+<div class="main">
+  <h2>My Documents</h2>
+
+  <div class="doc-grid">
+    <?php foreach($files as $file): ?>
+      <a class="doc-card" href="preview.php?file=<?= $file ?>">
+        <span>📄</span>
+        <p><?= $file ?></p>
+      </a>
+    <?php endforeach; ?>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h3>DocVault</h3>
+        <p>Secure document management for modern teams.</p>
+      </div>
+
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li>Features</li>
+          <li>Security</li>
+          <li>Pricing</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li>About</li>
+          <li>Careers</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li>Help Center</li>
+          <li>Privacy Policy</li>
+          <li>Terms</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Powerd By BlumartGlobal LLP. All rights reserved.
+    </div>
+  </footer>
+
+
+
+
+
+
+</body>
+</html>
